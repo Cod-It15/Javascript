@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    .button{
+        display: flex;
+        justify-content: center;
+        
+    }
+    button{
+        font-weight: 800;
+        background-color: #00ffbf;
+        color: black;
+        font-family: cursive;
+        border-radius: 5px;
+        padding: 4px 9px;
+        border: 0px transparent;
+        font-size: 1rem;
+    }
+    .result{
+        display: flex;
+        justify-content: center;
+
+    }
+    #result{
+        font-weight: 800;
+        font-size: 1.5rem;
+        font-family: cursive;
+    }
+</style>
+<body>
+    <h1>
+        Calculator
+    </h1>
+    <fieldset>
+        <legend>&nbsp;&nbsp;&nbsp;&nbsp; Select Values And Operation &nbsp; &nbsp;&nbsp; </legend>
+        <form action="#" method="get">
+            <input type="number" id="value1"> 
+            <select name="Operator" id="operator">
+                <option id="sum" value="+">+</option>
+                <option id="subtract" value="-">-</option>
+                <option id="multiply" value="*">*</option>
+                <option id="divide" value="/">/</option>
+                <option id="exponential" value="**">**</option>
+            </select>
+            <input type="number" id="value2"> 
+        </form><br>
+        <div class="button">
+
+            <Button id="calculate" onclick="sumValues()">Calculate</Button>
+        </div>
+        <br><br>
+        <div class="result">
+            <H3>Your Result Is <p id="result"></p></H3>
+        </div>
+        </fieldset>
+    </body>
+    <script src="script.js"></script>
+</html>
