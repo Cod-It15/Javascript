@@ -96,6 +96,3 @@ alert(result);
 //     alert(eval(`${x} ${operator} ${y}`))
 
 // }
-let e= "empty"
-let store = document.getElementById("test")
-store.innerHTML

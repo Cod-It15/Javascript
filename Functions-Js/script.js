@@ -18,11 +18,15 @@ let user = func1("Ayaan");
 //! Sum Function
 function func2(a, b) {
   console.log(Number(a) + Number(b));
-  return Number(a) + Number(b); // the return statement is used to return the value to the function from where the raw value came bcz when func1 provides the number from the prompt and if we store func1 in a variable js doesn't know what value is to be in the variable
+  return a+b; // the return statement is used to return the value to the function from where the raw value came bcz when func1 provides the number from the prompt and if we store func1 in a variable js doesn't know what value is to be in the variable
 }
-// let result = func2(prompt("Enter First Number"), prompt("Enter Second Number"));//for running on website only
-let result = func2(3, 5);
-// console.log(result);
+let result = func2(prompt("Enter First Number"), prompt("Enter Second Number"));//for running on website only
+// let result = func2(3, 5);
+
+// // write the sum in the html File
+
+// let para=document.getElementById("sumresult")
+// para.innerHTML=result;
 
 //! Function Passed Multiple Times
 //? we can use a Function multiple times by calling it by it name and passing the parameters

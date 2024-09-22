@@ -1,24 +1,107 @@
+// Quote Generator
 let quote_list = [
-    ' Life is not about finding yourself. It is about creating yourself.',
-    'The best way to predict the future is to invent it',
-    'Believe you can and you are halfway there. - Theodore Roosevelt',
-    'The only way to do great work is to love what you do. - Steve Jobs',
-    'Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill',
-    'If you can not explain it to a six year old, you do not understand it yourself. - Albert Einstein',
-    'The only impossible journey is the one you never begin. - Tom Sawyer',
-    'Do not watch the clock; do what it does. Keep going. - Sam Levenson',
-    'You miss 100% of the shots you do not take - Wayne Gretzky',
-    'You are never too old to set another goal or to dream a new dream.- C.S. Lewis',
-    'The biggest risk is not taking any risk... - Mark Zuckerberg',
-    'Do something today that your future self will thank you for. - Ayaan',
-     'You do not have to be great to start, but you have to start to be great - Zig Ziglar'
-]
-let random_index = Math.floor(Math.random()*10)
+  " Life is not about finding yourself. It is about creating yourself.",
+  "The best way to predict the future is to invent it",
+  "Believe you can and you are halfway there. - Theodore Roosevelt",
+  "The only way to do great work is to love what you do. - Steve Jobs",
+  "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+  "If you can not explain it to a six year old, you do not understand it yourself. - Albert Einstein",
+  "The only impossible journey is the one you never begin. - Tom Sawyer",
+  "Do not watch the clock; do what it does. Keep going. - Sam Levenson",
+  "You miss 100% of the shots you do not take - Wayne Gretzky",
+  "You are never too old to set another goal or to dream a new dream.- C.S. Lewis",
+  "The biggest risk is not taking any risk... - Mark Zuckerberg",
+  "Do something today that your future self will thank you for. - Ayaan",
+  "The only limit to our realization of tomorrow is our doubts of today. - Franklin D. Roosevelt",
+    "The journey of a thousand miles begins with one step. - Lao Tzu",
+    "That which does not kill us makes us stronger. - Friedrich Nietzsche",
+    "In the end, we will remember not the words of our enemies, but the silence of our friends. - Martin Luther King Jr.",
+    "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment. - Ralph Waldo Emerson",
+    "The best way to predict the future is to create it. - Peter Drucker",
+    "Life is what happens when you're busy making other plans. - John Lennon",
+    "Get busy living or get busy dying. - Stephen King",
+    "You only live once, but if you do it right, once is enough. - Mae West",
+    "In three words I can sum up everything I've learned about life: it goes on. - Robert Frost",
+    "The purpose of our lives is to be happy. - Dalai Lama",
+    "Life is really simple, but we insist on making it complicated. - Confucius",
+    "To love and be loved is to feel the sun from both sides. - David Viscott",
+    "Do what you can, with what you have, where you are. - Theodore Roosevelt",
+    "Success is not final, failure is not fatal: It is the courage to continue that counts. - Winston Churchill",
+    "Believe you can and you're halfway there. - Theodore Roosevelt",
+    "It does not matter how slowly you go as long as you do not stop. - Confucius",
+    "You miss 100% of the shots you don’t take. - Wayne Gretzky",
+    "The greatest glory in living lies not in never falling, but in rising every time we fall. - Nelson Mandela",
+    "Your time is limited, so don't waste it living someone else's life. - Steve Jobs",
+    "What lies behind us and what lies before us are tiny matters compared to what lies within us. - Ralph Waldo Emerson",
+    "The mind is everything. What you think you become. - Buddha",
+    "Happiness is not something ready made. It comes from your own actions. - Dalai Lama",
+    "Life is either a daring adventure or nothing at all. - Helen Keller",
+    "You must be the change you wish to see in the world. - Mahatma Gandhi",
+    "Success usually comes to those who are too busy to be looking for it. - Henry David Thoreau",
+    "Dream big and dare to fail. - Norman Vaughan",
+    "Act as if what you do makes a difference. It does. - William James",
+    "What we think, we become. - Buddha",
+    "The only way to do great work is to love what you do. - Steve Jobs",
+    "If you want to live a happy life, tie it to a goal, not to people or things. - Albert Einstein",
+    "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
+    "I am not a product of my circumstances. I am a product of my decisions. - Stephen R. Covey",
+    "You cannot shake hands with a clenched fist. - Indira Gandhi",
+    "The only thing we have to fear is fear itself. - Franklin D. Roosevelt",
+    "An unexamined life is not worth living. - Socrates",
+    "Keep your face always toward the sunshine—and shadows will fall behind you. - Walt Whitman",
+    "The only real mistake is the one from which we learn nothing. - Henry Ford",
+    "To succeed in life, you need three things: a wishbone, a backbone and a funny bone. - Reba McEntire",
+    "It is never too late to be what you might have been. - George Eliot",
+    "A person who never made a mistake never tried anything new. - Albert Einstein",
+    "The greatest wealth is to live content with little. - Plato",
+    "You can't use up creativity. The more you use, the more you have. - Maya Angelou",
+    "Success is how high you bounce when you hit bottom. - George S. Patton",
+    "The future depends on what you do today. - Mahatma Gandhi",
+    "Life isn't about finding yourself. Life is about creating yourself. - George Bernard Shaw",
+    "We do not remember days, we remember moments. - Cesare Pavese",
+    "Don't watch the clock; do what it does. Keep going. - Sam Levenson",
+    "If you cannot do great things, do small things in a great way. - Napoleon Hill",
+    "What you get by achieving your goals is not as important as what you become by achieving your goals. - Zig Ziglar",
+    "It always seems impossible until it is done. - Nelson Mandela",
+    "You have within you right now, everything you need to deal with whatever the world can throw at you. - Brian Tracy",
+    "If you're going through hell, keep going. - Winston Churchill",
+    "Opportunities don't happen, you create them. - Chris Grosser",
+    "Limit your 'always' and your 'nevers'. - Amy Poehler",
+    "Nothing will work unless you do. - Maya Angelou",
+    "The only way to achieve the impossible is to believe it is possible. - Charles Kingsleigh",
+    "Everything you’ve ever wanted is on the other side of fear. - George Addair",
+    "We can't help everyone, but everyone can help someone. - Ronald Reagan",
+    "Success is not how high you have climbed, but how you make a positive difference to the world. - Roy T. Bennett",
+    "Be yourself; everyone else is already taken. - Oscar Wilde",
+    "You don’t have to be great to start, but you have to start to be great. - Zig Ziglar",
+    "Your life does not get better by chance, it gets better by change. - Jim Rohn",
+    "The best revenge is massive success. - Frank Sinatra",
+    "A goal without a plan is just a wish. - Antoine de Saint-Exupéry",
+    "Dream as if you'll live forever. Live as if you'll die today. - James Dean",
+    "The secret of getting ahead is getting started. - Mark Twain",
+    "Change your thoughts and you change your world. - Norman Vincent Peale",
+    "Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful. - Albert Schweitzer",
+    "The best time to plant a tree was twenty years ago. The second best time is now. - Chinese Proverb",
+    "Your limitation—it’s only your imagination. - Unknown",
+    "Push yourself, because no one else is going to do it for you. - Unknown",
+    "Great things never come from comfort zones. - Unknown",
+    "Dream it. Wish it. Do it. - Unknown",
+    "Success doesn’t just find you. You have to go out and get it. - Unknown",
+    "The harder you work for something, the greater you’ll feel when you achieve it. - Unknown",
+    "Dream bigger. Do bigger. - Unknown",
+    "Don’t stop when you’re tired. Stop when you’re done. - Unknown",
+    "Wake up with determination. Go to bed with satisfaction. - Unknown",
+    "Do something today that your future self will thank you for. - Unknown",
+    "Little things make big days. - Unknown"
+];
+
+function func1() {
+  let random_index = Math.floor(Math.random() * 92);
+  let quote_para = document.getElementById("quotes");
+  quote_para.innerHTML = quote_list[random_index];
+}
+
+let generate_btn = document.getElementById("btn");
+generate_btn.addEventListener("click", func1);
 
 
-let btn = document.getElementById('btn')
-
-
-
-
-btn.addEventListener(click(getRandomQuote))
